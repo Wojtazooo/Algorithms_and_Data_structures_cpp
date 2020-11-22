@@ -5,7 +5,6 @@ struct elem
 {
 	int val;
 	elem* next;
-
 };
 
 class LinkedList
