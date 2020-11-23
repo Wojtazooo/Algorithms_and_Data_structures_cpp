@@ -1,4 +1,23 @@
-#include "OrderedLinkedList.h"
+#pragma once
+#include <iostream>
+
+struct elem
+{
+	int val;
+	elem* next;
+};
+
+class OrderedLinkedList
+{
+private:
+	elem* head;
+public:
+	OrderedLinkedList() : head(nullptr) {};
+
+	void PrintAll(); // O(n)
+	void Insert(int v); // optimistic O(1) pessimistic O(n) 
+	elem* DelMax(); // 
+};
 
 void OrderedLinkedList::PrintAll()
 {
@@ -29,9 +48,9 @@ void OrderedLinkedList::Insert(int v)
 		return;
 	}
 	elem* p = head;
-	while (p->next && p->next->val > v) 
+	while (p->next && p->next->val > v)
 	{
-		p = p->next; 
+		p = p->next;
 	}
 	to_add->next = p->next;
 	p->next = to_add;

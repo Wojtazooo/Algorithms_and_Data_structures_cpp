@@ -21,7 +21,7 @@
 
 
 // LinkedList usage
-#include "OrderedLinkedList/OrderedLinkedList.h"
+#include "OrderedLinkedList.h"
 int main()
 {
 	OrderedLinkedList OL;
