@@ -1,5 +1,6 @@
 #include "Linkedlist.h"
 #include "OrderedLinkedList.h"
+#include "Heap.h"
 int main()
 {
 	// LinkedList test
@@ -30,6 +31,18 @@ int main()
 		OL.DelMax();
 		OL.PrintAll();
 		std::cout << "==================\n";
+	}
+
+	// Heap test
+	{
+		Heap H;
+		srand(time(NULL));
+		for (int i = 1; i < 20; i++)
+		{
+			H.Insert(rand()%100);
+		}
+		H.Show();
+		
 	}
 
 	
