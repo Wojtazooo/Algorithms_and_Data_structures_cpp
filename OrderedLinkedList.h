@@ -1,11 +1,6 @@
 #pragma once
 #include <iostream>
-
-struct elem
-{
-	int val;
-	elem* next;
-};
+#include "Linkedlist.h" // to use struct elem{val, pointer}
 
 class OrderedLinkedList
 {
@@ -14,9 +9,9 @@ private:
 public:
 	OrderedLinkedList() : head(nullptr) {};
 
-	void PrintAll(); // O(n)
+	void PrintAll(); // O(n) 
 	void Insert(int v); // optimistic O(1) pessimistic O(n) 
-	elem* DelMax(); // 
+	elem* DelMax(); // O(1) 
 };
 
 void OrderedLinkedList::PrintAll()
