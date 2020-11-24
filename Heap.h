@@ -18,8 +18,10 @@ public:
 
 	void Insert(int val);
 	void UpHeap(int id); 
+	void DownHeap(int id);
 	void Show();
 	void Print();
+	int DelMax();
 
 
 
@@ -94,4 +96,29 @@ void Heap::Print()
 	}
 	std::cout << "\n";
 }
+
+int Heap::DelMax()
+{
+	int ret = tab[1];
+	tab[1] = tab[hl];
+	hl--;
+	DownHeap(1);
+	return ret;
+}
+
+int max(int a, int b)
+{
+	if (a > b) return a;
+	return b;
+}
+
+void Heap::DownHeap(int id)
+{
+	while (id < hl)
+	{
+
+	}
+}
+
+
 

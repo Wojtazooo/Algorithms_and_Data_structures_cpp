@@ -35,14 +35,13 @@ int main()
 
 	// Heap test
 	{
-		Heap H;
+		Heap H(10000);
 		srand(time(NULL));
-		for (int i = 1; i < 20; i++)
+		for (int i = 1; i < 50; i++)
 		{
 			H.Insert(rand()%100);
 		}
 		H.Show();
-		
 	}
 
 	
