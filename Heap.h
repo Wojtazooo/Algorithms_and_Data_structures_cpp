@@ -114,7 +114,7 @@ void Heap::DownHeap(int id)
 		int k = 2 * id; // index of next left 
 		if (2 * id + 1 <= hl)
 			if (tab[2 * id + 1] > tab[2 * id]) // check if the next right is bigger than the left
-				k = 2 * id; // k is index of bigger child
+				k = 2 * id + 1; // k is index of bigger child
 		if (tab[k] < tab[id]) // bigger child is less than tab[id] so realation is fine and we finish
 			break;
 		// else relation between tab[k] and tab[id] is wrong and we have to swap them 
