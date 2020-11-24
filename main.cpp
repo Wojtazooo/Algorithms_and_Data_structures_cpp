@@ -35,6 +35,8 @@ int main()
 
 	// Heap test
 	{
+		std::cout << "Heap: \n";
+
 		Heap H(10000);
 		srand(time(NULL));
 		for (int i = 1; i < 50; i++)
@@ -42,7 +44,16 @@ int main()
 			H.Insert(rand()%100);
 		}
 		H.Show();
+
+		H.DelMax();
+		std::cout << "Delmax\n";
+		H.Show();
+		std::cout << "==================\n";
+
 	}
+
+
+
 
 	
 }
