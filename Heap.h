@@ -15,16 +15,12 @@ public:
 		tab[0] = INT_MAX; 
 		hl = 0;
 	}
-
 	void Insert(int val);
 	void UpHeap(int id); 
 	void DownHeap(int id);
 	void Show();
 	void Print();
 	int DelMax();
-
-
-
 };
 
 
@@ -50,12 +46,12 @@ void Heap::UpHeap(int id)
 
 void Heap::Show()
 {
-	int h = (log2(hl) + 1); // heap height
-	int spaces = pow(2, h-1) - 1; // spaces between numbers	
+	int h = ((int)log2(hl) + 1); // heap height
+	int spaces = (int)pow(2, h-1) - 1; // spaces between numbers	
 
 	// with log10 we can compute the width of the widthest element = the biggest
-	//it will allow to adjust size of one elem
-	int width = (log10(tab[1])) + 1; 
+	// it will allow to adjust size of one elem
+	int width = (int)log10(tab[1]) + 1; 
 	
 	int nr_to_print = 1;
 	std::cout << std::setw(width);

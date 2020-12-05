@@ -1,6 +1,7 @@
 #include "Linkedlist.h"
 #include "OrderedLinkedList.h"
 #include "Heap.h"
+#include "BinarySearchTree.h"
 int main()
 {
 	// LinkedList test
@@ -36,22 +37,31 @@ int main()
 	// Heap test
 	{
 		std::cout << "Heap: \n";
-
-		Heap H(10000);
+		Heap H(100);
 		srand(time(NULL));
-		for (int i = 1; i < 50; i++)
+		for (int i = 1; i < 15; i++)
 		{
-			H.Insert(rand()%100);
+			int val = rand() % 50 + 1;
+			std::cout << "Insert: " << val << std::endl;
+			H.Insert(val);
+			H.Show();
+			std::cout << "---------------\n";
 		}
-		H.Show();
-
 		H.DelMax();
 		std::cout << "Delmax\n";
 		H.Show();
 		std::cout << "==================\n";
-
 	}
 
+	// Binary Search Tree test
+	{
+		std::cout << "Binary Search Tree: \n";
+		Binary_Search_Tree BST;
+		BST.Insert(1);
+
+
+		std::cout << "==================\n";
+	}
 
 
 
