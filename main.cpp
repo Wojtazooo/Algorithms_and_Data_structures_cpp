@@ -57,7 +57,13 @@ int main()
 	{
 		std::cout << "Binary Search Tree: \n";
 		Binary_Search_Tree BST;
-		BST.Insert(1);
+		
+		BST.Insert(20);
+		BST.Insert(10);
+		BST.Insert(30);
+		BST.Insert(15);
+		BST.Insert(25);
+		BST.PrintAll();
 
 
 		std::cout << "==================\n";
