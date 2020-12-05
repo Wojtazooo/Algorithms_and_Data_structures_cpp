@@ -14,7 +14,9 @@ private:
 public:
 	Binary_Search_Tree():root(nullptr){};
 	bst_node* Search(int v, bst_node* &prev);
+	bst_node** Search2(int v);
 	void Insert(int v);
+	void Insert2(int v);
 	void PrintAll();
 	void InOrder_print(bst_node* act);
 	void PreOrder_print(bst_node* act);
@@ -42,6 +44,25 @@ bst_node* Binary_Search_Tree::Search(int v, bst_node* &prev) // previous element
 	return p;
 }
 
+inline bst_node** Binary_Search_Tree::Search2(int v)
+{
+	bst_node** p = &root;
+	while (*p != nullptr)
+	{
+		if (v == (*p)->key)
+			break;
+		if (v < (*p)->key)
+		{
+			p = &((*p)->left);
+		}
+		else
+		{
+			p = &((*p)->right);
+		}
+	}
+	return p;
+}
+
 void Binary_Search_Tree::Insert(int v)
 {
 	bst_node* prev = nullptr;
@@ -63,6 +84,15 @@ void Binary_Search_Tree::Insert(int v)
 		prev->right = pnew;
 	else
 		prev->left = pnew;
+}
+
+void Binary_Search_Tree::Insert2(int v)
+{
+	bst_node** p = Search2(v);
+	if ((*p) != nullptr) // item exists
+		return;
+	else
+		(*p) = new bst_node{ v, nullptr, nullptr };
 }
 
 void Binary_Search_Tree::PrintAll()

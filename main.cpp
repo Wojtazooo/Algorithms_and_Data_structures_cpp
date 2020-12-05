@@ -57,15 +57,21 @@ int main()
 	{
 		std::cout << "Binary Search Tree: \n";
 		Binary_Search_Tree BST;
-		
 		BST.Insert(20);
 		BST.Insert(10);
 		BST.Insert(30);
 		BST.Insert(15);
 		BST.Insert(25);
-		BST.PrintAll();
-
-
+		BST.PrintAll();		
+		std::cout << "---------------\n";
+		std::cout << "Binary Search Tree double pointers insert\n";
+		Binary_Search_Tree BST2;
+		BST2.Insert2(20);
+		BST2.Insert2(10);
+		BST2.Insert2(30);
+		BST2.Insert2(15);
+		BST2.Insert2(25);
+		BST2.PrintAll();
 		std::cout << "==================\n";
 	}
 
