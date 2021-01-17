@@ -70,14 +70,12 @@ void Binary_Search_Tree::Insert(int v)
 
 	if (p != nullptr)
 	{
-		std::cout << "item with key = "<<v<<" already exists\n";
 		return;
 	}
 	bst_node* pnew = new bst_node{ v, nullptr, nullptr };
 	if(root == nullptr)
 	{
 		root = pnew; 
-		std::cout << "inserting first item\n";
 		return;
 	}
 	if (prev->key < v)

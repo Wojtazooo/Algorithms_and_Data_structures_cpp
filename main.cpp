@@ -2,6 +2,7 @@
 #include "OrderedLinkedList.h"
 #include "Heap.h"
 #include "BinarySearchTree.h"
+#include "Splay.h"
 int main()
 {
 	// LinkedList test
@@ -57,11 +58,10 @@ int main()
 	{
 		std::cout << "Binary Search Tree: \n";
 		Binary_Search_Tree BST;
-		BST.Insert(20);
-		BST.Insert(10);
-		BST.Insert(30);
-		BST.Insert(15);
-		BST.Insert(25);
+		BST.Insert('b');
+		BST.Insert('a');
+		BST.Insert('c');
+
 		BST.PrintAll();		
 		std::cout << "---------------\n";
 		std::cout << "Binary Search Tree double pointers insert\n";
@@ -75,7 +75,37 @@ int main()
 		std::cout << "==================\n";
 	}
 
+	// SplayTree
+	{
+		std::cout << "Splay Tree: \n";
+		Splay_Tree ST;
+		Binary_Search_Tree BST;
 
+		for (int i = 1; i <= 10; i++)
+		{
+			ST.Insert(i);
+			BST.Insert(i);
+		}
+		std::cout << "after inserts:\n";
+		ST.PrintAll();
+		std::cout << "RIGHT: \n";
+		ST.Print_right();
+		std::cout << "LEFT: \n";
+		ST.Print_left();
 
+		std::cout << "Search: 1,2\n";
+		ST.Search(1);
+		ST.Search(2);
+		ST.PrintAll();
+		std::cout << "RIGHT: \n";
+		ST.Print_right();
+		std::cout << "LEFT: \n";
+		ST.Print_left();
+
+		std::cout << "---------------\n";
+
+		std::cout << "\nBinary Tree with the same elements: \n";
+		BST.PrintAll();
+	}
 	
 }
