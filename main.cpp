@@ -3,6 +3,8 @@
 #include "Heap.h"
 #include "BinarySearchTree.h"
 #include "Splay.h"
+#include "Sorting_algorithms.h"
+
 int main()
 {
 	// LinkedList test
@@ -101,11 +103,119 @@ int main()
 		ST.Print_right();
 		std::cout << "LEFT: \n";
 		ST.Print_left();
-
 		std::cout << "---------------\n";
 
 		std::cout << "\nBinary Tree with the same elements: \n";
 		BST.PrintAll();
+		std::cout << "==================\n";
 	}
+
+
+	std::cout << "Elementary sorting algorithms\n\n";
+
+	// Selection Sort
+	{
+		std::cout << "Selection Sort\n";
+
+		int size = 20;
+		int* tab = new int[size];
+		for (int i = 0; i < size; i++)
+		{
+			tab[i] = rand() % (5 * size) + 1;
+		}
+		Print_tab(tab, size);
+		std::cout << "is sorted? ";
+		check_if_sorted(tab, size) == true ? std::cout << "Yes\n" : std::cout << "No\n";
+		
+		SelectionSort(tab, size);
+		Print_tab(tab, size);
+		std::cout << "is sorted? ";
+		check_if_sorted(tab, size) == true ? std::cout << "Yes\n" : std::cout << "No\n";
+	}
+
+	// Insertion Sort
+	{
+		std::cout << "\nInsertion Sort\n";
+
+		int size = 20;
+		int* tab = new int[size];
+		for (int i = 0; i < size; i++)
+		{
+			tab[i] = rand() % (5 * size) + 1;
+		}
+		Print_tab(tab, size);
+		std::cout << "is sorted? ";
+		check_if_sorted(tab, size) == true ? std::cout << "Yes\n" : std::cout << "No\n";
+		
+		InsertionSort(tab, size);
+		Print_tab(tab, size);
+		std::cout << "is sorted? ";
+		check_if_sorted(tab, size) == true ? std::cout << "Yes\n" : std::cout << "No\n";
+	}
+
+	// Bubble Sort
+	{
+		std::cout << "\nBubble Sort\n";
+
+		int size = 20;
+		int* tab = new int[size];
+		for (int i = 0; i < size; i++)
+		{
+			tab[i] = rand() % (5 * size) + 1;
+		}
+		Print_tab(tab, size);
+		std::cout << "is sorted? ";
+		check_if_sorted(tab, size) == true ? std::cout << "Yes\n" : std::cout << "No\n";
+
+		BubbleSort(tab, size);
+		Print_tab(tab, size);
+		std::cout << "is sorted? ";
+		check_if_sorted(tab, size) == true ? std::cout << "Yes\n" : std::cout << "No\n";
+	}
+
+	std::cout << "==================\n";
+	
+	// Mix Sort
+	{
+		std::cout << "Mix Sort\n";
+
+		int size = 20;
+		int* tab = new int[size];
+		for (int i = 0; i < size; i++)
+		{
+			tab[i] = rand() % (5 * size) + 1;
+		}
+		Print_tab(tab, size);
+		std::cout << "is sorted? ";
+		check_if_sorted(tab, size) == true ? std::cout << "Yes\n" : std::cout << "No\n";
+
+		MixSort(tab, size);
+		Print_tab(tab, size);
+		std::cout << "is sorted? ";
+		check_if_sorted(tab, size) == true ? std::cout << "Yes\n" : std::cout << "No\n";
+	}
+
+	// Quick Sort
+	{
+		std::cout << "Quick Sort\n";
+
+		int size = 20;
+		int* tab = new int[size];
+		for (int i = 0; i < size; i++)
+		{
+			tab[i] = rand() % (5 * size) + 1;
+		}
+		Print_tab(tab, size);
+		std::cout << "is sorted? ";
+		check_if_sorted(tab, size) == true ? std::cout << "Yes\n" : std::cout << "No\n";
+
+		QuickSort(tab, 0, size - 1);
+		Print_tab(tab, size);
+		std::cout << "is sorted? ";
+		check_if_sorted(tab, size) == true ? std::cout << "Yes\n" : std::cout << "No\n";
+	}
+
+
+
 	
 }
