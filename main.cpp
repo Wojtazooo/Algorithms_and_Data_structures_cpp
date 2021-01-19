@@ -4,59 +4,9 @@
 #include "BinarySearchTree.h"
 #include "Splay.h"
 #include "Sorting_algorithms.h"
+#include "RST.h"
 
-elem* OddEvenPartition(elem*& head)
-{
-	elem* oddfirst = nullptr, *evenfirst = nullptr, *evenlast = nullptr, *oddlast = nullptr;
-	elem* prev = nullptr;
-	elem* p = head;
 
-	while (p != nullptr)
-	{
-		if (p->val % 2 != 0) // element jest nieparzysty
-		{
-			if (oddfirst == nullptr) // natrafiliśmy na pierwszy nieparzysty element
-			{
-				oddfirst = p;
-				oddlast = p;
-			}
-			else if (prev->val % 2 != 0) // poprzedni też był NP więc przedłużamy
-			{
-				oddlast = p;
-			}
-			else // poprzedni był P więc wydłużamy ścieżkę nieparzystych
-			{
-				oddlast->next = p;
-				oddlast = p;
-			}
-		}
-		else // element jest parzysty
-		{
-			if (evenfirst == nullptr) // natrafiliśmy na pierwszy parzysty element
-			{
-				evenfirst = p;
-				evenlast = p;
-			}
-			else if (prev->val % 2 == 0) // poprzedni też był P więc przedłużamy
-			{
-				evenlast = p;
-			}
-			else // poprzedni był NP więc wydłużamy naszą parzystą ścieżkę
-			{
-				evenlast->next = p;
-				evenlast = p;
-			}
-		}
-		prev = p;
-		p = p->next;
-	}
-
-	if(evenlast != nullptr) evenlast->next = oddfirst;
-	if (oddlast != nullptr) oddlast->next = nullptr;
-	head = evenfirst;
-
-	return oddfirst;
-}
 
 
 int main()
@@ -72,7 +22,6 @@ int main()
 		L.DelMax();
 		L.PrintAll();
 		std::cout << "==================\n";
-
 	}
 
 	// OrderedLinkedList test
@@ -293,7 +242,6 @@ int main()
 		}
 	}
 
-
 	// OddEven LinkedList
 	{
 		std::cout << "--------------------------\n";
@@ -317,5 +265,25 @@ int main()
 		std::cout << "Sorted Linked List\n";
 		ListQuickSort(L.head, tail);
 		L.PrintAll();
+	}
+
+	//  RST
+	{
+		std::cout << "--------------------------\n";
+		RST rst(8,10);
+
+		std::cout << "przed\n";
+		rst.PrintAll();
+
+
+		int size = 10;
+		for (int i = 0; i < size; i++)
+		{
+			rst.Insert(rand() % (5 * size) + 1);
+		}
+
+		
+		std::cout << "po\n";
+		rst.PrintAll();
 	}
 }
