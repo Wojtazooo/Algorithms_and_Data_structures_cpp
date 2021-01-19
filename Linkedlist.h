@@ -10,8 +10,9 @@ struct elem
 class LinkedList
 {
 private:
-	elem* head;
+	
 public:
+	elem* head;
 	LinkedList() : head(nullptr) {};
 
 	void PrintAll(); // O(n)

@@ -1,9 +1,63 @@
-#include "Linkedlist.h"
+﻿#include "Linkedlist.h"
 #include "OrderedLinkedList.h"
 #include "Heap.h"
 #include "BinarySearchTree.h"
 #include "Splay.h"
 #include "Sorting_algorithms.h"
+
+elem* OddEvenPartition(elem*& head)
+{
+	elem* oddfirst = nullptr, *evenfirst = nullptr, *evenlast = nullptr, *oddlast = nullptr;
+	elem* prev = nullptr;
+	elem* p = head;
+
+	while (p != nullptr)
+	{
+		if (p->val % 2 != 0) // element jest nieparzysty
+		{
+			if (oddfirst == nullptr) // natrafiliśmy na pierwszy nieparzysty element
+			{
+				oddfirst = p;
+				oddlast = p;
+			}
+			else if (prev->val % 2 != 0) // poprzedni też był NP więc przedłużamy
+			{
+				oddlast = p;
+			}
+			else // poprzedni był P więc wydłużamy ścieżkę nieparzystych
+			{
+				oddlast->next = p;
+				oddlast = p;
+			}
+		}
+		else // element jest parzysty
+		{
+			if (evenfirst == nullptr) // natrafiliśmy na pierwszy parzysty element
+			{
+				evenfirst = p;
+				evenlast = p;
+			}
+			else if (prev->val % 2 == 0) // poprzedni też był P więc przedłużamy
+			{
+				evenlast = p;
+			}
+			else // poprzedni był NP więc wydłużamy naszą parzystą ścieżkę
+			{
+				evenlast->next = p;
+				evenlast = p;
+			}
+		}
+		prev = p;
+		p = p->next;
+	}
+
+	if(evenlast != nullptr) evenlast->next = oddfirst;
+	if (oddlast != nullptr) oddlast->next = nullptr;
+	head = evenfirst;
+
+	return oddfirst;
+}
+
 
 int main()
 {
@@ -177,7 +231,7 @@ int main()
 	
 	// Mix Sort
 	{
-		std::cout << "Mix Sort\n";
+		std::cout << "\nMix Sort\n";
 
 		int size = 20;
 		int* tab = new int[size];
@@ -197,7 +251,7 @@ int main()
 
 	// Quick Sort
 	{
-		std::cout << "Quick Sort\n";
+		std::cout << "\nnQuick Sort\n";
 
 		int size = 20;
 		int* tab = new int[size];
@@ -214,6 +268,59 @@ int main()
 		std::cout << "is sorted? ";
 		check_if_sorted(tab, size) == true ? std::cout << "Yes\n" : std::cout << "No\n";
 	}
+
+	// OddEvenQuick Sort
+	{
+		std::cout << "OddEvenQuick Sort\n";
+
+		int size = 20;
+		int* tab = new int[size];
+		for (int k = 0; k < 10; k++)
+		{
+			for (int i = 0; i < size; i++)
+			{
+				tab[i] = rand() % (5 * size) + 1;
+			}
+			std::cout << "-------------------------\n";
+			Print_tab(tab, size);
+			std::cout << "is sorted? ";
+			check_if_sorted(tab, size) == true ? std::cout << "Yes\n" : std::cout << "No\n";
+
+			QuickSortOddEven(tab, 0, size - 1);
+			Print_tab(tab, size);
+			std::cout << "is sorted? ";
+			check_if_sorted(tab, size) == true ? std::cout << "Yes\n" : std::cout << "No\n";
+		}
+	}
+
+
+	// OddEven LinkedList
+	{
+		std::cout << "--------------------------\n";
+		LinkedList L;
+
+		int size = 100;
+		for (int i = 0; i < size; i++)
+		{
+			L.Insert(rand() % (5 * size) + 1);
+		}
+
+		elem* tail = L.head;
+		while (tail->next != nullptr)
+		{
+			tail = tail->next;
+		}
+
+
+		std::cout << "Given linked list\n";
+		L.PrintAll();
+		std::cout << "Sorted Linked List\n";
+		ListQuickSort(L.head, tail);
+		L.PrintAll();
+	}
+
+
+
 
 
 
