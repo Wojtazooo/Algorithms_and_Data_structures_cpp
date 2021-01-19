@@ -318,11 +318,4 @@ int main()
 		ListQuickSort(L.head, tail);
 		L.PrintAll();
 	}
-
-
-
-
-
-
-	
 }

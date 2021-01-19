@@ -1,5 +1,4 @@
-﻿
-bool check_if_sorted(int* tab, int size)
+﻿bool check_if_sorted(int* tab, int size)
 {
 	for (int i = 1; i < size; i++)
 	{
@@ -160,7 +159,6 @@ void QuickSortOddEven(int* tab, int l, int r)
 	if (k + 1 < r) QuickSort(tab, k, r);
 }
 
-
 void ListPartition(elem *& head, elem*& g_head, elem *&g_tail,elem *&piv_head,elem *&piv_tail,elem *&s_head,elem *&s_tail)
 {
 	elem* p = head;
@@ -211,8 +209,6 @@ void ListPartition(elem *& head, elem*& g_head, elem *&g_tail,elem *&piv_head,el
 	if (piv_tail != nullptr) piv_tail->next = nullptr;
 	if (s_tail != nullptr) s_tail->next = nullptr;
 }
-
-
 
 void ListQuickSort(elem*& head, elem*& tail)
 {

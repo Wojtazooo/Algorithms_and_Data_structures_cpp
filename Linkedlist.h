@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include "Linkedlist.h"
 
 struct elem
 {
@@ -20,9 +21,6 @@ public:
 	void Insert_Last(int v); // insert at the end O(n)
 	elem* DelMax(); // optimistic O(1) pessimistic O(n)
 };
-
-#include "Linkedlist.h"
-
 
 void LinkedList::PrintAll()
 {
