@@ -100,7 +100,9 @@
 
 ## Union-Find
 
-- [ ] Union-find array
+- [x] Union-find array
+  - [x] Find O(1)
+  - [x] Union O(n)
 
 - [ ] Union-find tree
 
