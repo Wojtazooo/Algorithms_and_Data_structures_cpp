@@ -21,12 +21,12 @@
   - [x] DelMax O(DownHeap)
   - [ ] Max O(1)
 
-- [ ] Beap
+- [x] Beap
   - [x] Insert O(UpBeap)
   - [x] UpBeap O(sqrt(n))
   - [x] DelMax O(DownBeap)
   - [x] DownBeap O(sqrt(n))
-  - [ ] Search O(sqrt(n))
+  - [x] Search O(sqrt(n))
 
 - [ ] Leftist tree
   - [ ] Union  O(logn)
