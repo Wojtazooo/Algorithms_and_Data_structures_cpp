@@ -22,10 +22,10 @@
   - [ ] Max O(1)
 
 - [ ] Beap
-  - [ ] Insert O(UpBeap)
-  - [ ] UpBeap O(sqrt(n))
+  - [x] Insert O(UpBeap)
+  - [x] UpBeap O(sqrt(n))
   - [ ] DelMax O(DownBeap)
-  - [ ] DownBeap O(sqrt(n))
+  - [x] DownBeap O(sqrt(n))
   - [ ] Search O(sqrt(n))
 
 - [ ] Leftist tree
