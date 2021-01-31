@@ -1,16 +1,25 @@
 # Algorithms_and_Data_structures_cpp
+
+## Basic data structures
+
+- [x] Linked List
+  - [x] Insert O(1)
+  - [x] InsertLast O(n)
+  - [x] DelMax opt O(1) pess O(n)
+
+- [ ] Stack
  
 ## Priority queue
-- [x] Linked List
- 
 - [x] Ordered List
-
+  - [x] Insert opt O(1) pess O(n)
+  - [x] DelMax O(1)
+  
 - [x] Heap
   - [x] Insert O(UpHeap)
   - [x] UpHeap O(logn)
-  - [x] DelMax O(DownHeap)
   - [x] DownHeap O(logn)
-  - [x] Max O(1)
+  - [x] DelMax O(DownHeap)
+  - [ ] Max O(1)
 
 - [ ] Beap
   - [ ] Insert O(UpBeap)
@@ -52,6 +61,8 @@
   
 ## Dictionaries
 
+#### Binary trees
+
 - [x] BST - Binary search tree
   - [x] Search O(h) average O(logn) pess O(n)
   - [x] Insert O(Search)
@@ -66,4 +77,39 @@
   - [ ] Insert
   - [ ] Delete
 
-- [ ] 2-3-4 Tree / Black Red
+- [ ] 2-3-4 Tree / Black Red tree
+
+#### 
+
+- [x] Splay
+
+- [ ] 2-3 tree 
+
+#### Prefix trees
+
+- [x] RST
+  - [x] Insert 
+  - [x] Search
+  - [x] Delete
+
+- [ ] Trie
+
+- [ ] Trie +
+
+- [ ] Hash table
+
+## Union-Find
+
+- [ ] Union-find array
+
+- [ ] Union-find tree
+
+## Sorting algorithms
+
+- [x] Selection Sort
+- [x] Insertion Sort
+- [x] Bubble Sort
+- [x] Mix Sort
+- [x] QuickSort
+  - [x] Partition
+- [x] List Quicksort
