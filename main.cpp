@@ -5,6 +5,7 @@
 #include "Splay.h"
 #include "Sorting_algorithms.h"
 #include "RST.h"
+#include "UnionFindArray.h"
 
 
 
@@ -281,9 +282,25 @@ int main()
 		{
 			rst.Insert(rand() % (5 * size) + 1);
 		}
-
-		
+				
 		std::cout << "po\n";
 		rst.PrintAll();
+	}
+
+	// UnionFindArray
+	{
+		std::cout << "--------------------------\n";
+		int n = 10;
+		int* sets = new int[n];
+
+		for (int i = 0; i < n; i++)
+		{
+			sets[i] = rand() % (n / 2) + 1;
+		}
+		UnionFindArray ufarray(n, sets);
+		ufarray.Print();
+		ufarray.Union(1, 2, 5);
+		std::cout << "After union 1 and 2 to 5: \n";
+		ufarray.Print();
 	}
 }
