@@ -1,6 +1,8 @@
 #pragma once
 #include <tuple>
 #include <cmath>
+#include <iostream>
+#include <iomanip>
 
 class Beap
 {
@@ -18,12 +20,15 @@ public:
 	void DownBeap(int k);
 	int DelMax();
 	int Max();
+	int Search(int v);
+
+	void Print();
 };
 
 Beap::Beap(int size)
 {
-	this->size = size;
-	tab = new int[size];
+	this->size = size+1;
+	tab = new int[size+1];
 	tab[0] = INT_MAX;
 	hl = 0;
 }
@@ -126,6 +131,7 @@ int Beap::DelMax()
 	tab[1] = tab[hl];
 	hl--;
 	DownBeap(1);
+	return to_ret;
 }
 
 int Beap::Max()
@@ -133,3 +139,52 @@ int Beap::Max()
 	return tab[1];
 }
 
+int Beap::Search(int v)
+{
+	int i, j, k;
+
+	std::tie(i, j) = k2ij(hl);
+	if (i != j)
+	{
+		j = --i;
+	}
+
+	k = ij2k(i, j);
+
+	while (v != tab[k] && j > 0)
+	{
+		if (v > tab[k]) // move up left
+		{
+			i--;
+			j--;
+			k = ij2k(i, j);
+		}
+		else if (v < tab[k])
+		{
+			if (ij2k(i + 1, j) <= hl) // move down left
+			{
+				i++;
+				k = ij2k(i, j);
+			}
+			else // move to left
+			{
+				j--;
+				k--;
+			}
+		}
+	}
+	if (tab[k] == v) return k;
+	return 0;
+}
+
+void Beap::Print()
+{
+	int i, j;
+	for (int id = 1; id <= hl; id++)
+	{
+		std::tie(i, j) = k2ij(id);
+		std::cout << std::setw(4) <<tab[id];
+		if (i == j) std::cout << "\n";
+	}
+	std::cout << "\n";
+}

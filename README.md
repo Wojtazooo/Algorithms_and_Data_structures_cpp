@@ -24,7 +24,7 @@
 - [ ] Beap
   - [x] Insert O(UpBeap)
   - [x] UpBeap O(sqrt(n))
-  - [ ] DelMax O(DownBeap)
+  - [x] DelMax O(DownBeap)
   - [x] DownBeap O(sqrt(n))
   - [ ] Search O(sqrt(n))
 

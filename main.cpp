@@ -1,6 +1,7 @@
 ﻿#include "Linkedlist.h"
 #include "OrderedLinkedList.h"
 #include "Heap.h"
+#include "Beap.h"
 #include "BinarySearchTree.h"
 #include "Splay.h"
 #include "Sorting_algorithms.h"
@@ -302,5 +303,28 @@ int main()
 		ufarray.Union(1, 2, 5);
 		std::cout << "After union 1 and 2 to 5: \n";
 		ufarray.Print();
+	}
+
+	// Beap
+	{
+		std::cout << "--------------------------\n";
+		std::cout << "BEAP\n";
+		int size = 20;
+		Beap beap(size+1);
+		for (int i = 0; i < size; i++)
+		{
+			beap.Insert((rand() % (2 * size)) + 1);
+		}
+
+		beap.Insert(1);
+		beap.Print();
+
+		std::cout << "Index of 1: " << beap.Search(1) << "\n";
+		std::cout << "Index of 10: " << beap.Search(10) << "\n";
+		std::cout << "Index of 20: " << beap.Search(20) << "\n";
+		std::cout << "Index of 30: " << beap.Search(30) << "\n";
+
+
+
 	}
 }
